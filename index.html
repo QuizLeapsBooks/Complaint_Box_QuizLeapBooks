@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="comlaintsstylesheet.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Complaint Box</h2>
+    <form action="https://formspree.io/f/xldrdqwp" method="POST">
+        <div class="form-group">
+            <label for="Fname">First Name:</label>
+            <input type="text" id="Fname" name="First name" title="Type your First Name" required>
+        </div>
+        <div class="form-group">
+            <label for="Lname">Last Name:</label>
+            <input type="text" id="Lname" name="Last name" title="Type your Last Name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" title="Type your Email" required>
+        </div>
+        <p>Which type of complaints do you have?</p>
+        <input required type="radio" id="Spelling_Mistake" name="feedback" value="Spelling Mistake">
+        <label style="display: inline-block;" for="Spelling_Mistake">Spelling Mistake</label>
+        <input required type="radio" id="Wrong_Answer" name="feedback" value="Wrong Answer">
+        <label style="display: inline-block;" for="Wrong_Answer">Wrong Answer</label>
+        <input required type="radio" id="Bugs" name="feedback" value="Bugs">
+        <label style="display: inline-block;" for="Bugs">Bugs</label>
+        <input required type="radio" id="Web_Pages_Not_Available" name="feedback" value="Web Pages are not available">
+        <label style="display: inline-block;" for="Web_Pages_Not_Available">Web Pages are not available</label>
+        <input required type="radio" id="Other" name="feedback" value="Other">
+        <label style="display: inline-block;" for="Other">Other</label>
+        
+        <div class="form-group hidden" id="classSectionDiv">
+            <label for="classSection">Please select the class, subject, and board where the mistake is found:</label>
+            <select id="classSection" name="classSection" title="Select your Class">
+                <option value="" disabled selected>Select your class</option>
+                <option value="Class 6">Class 6</option>
+                <option value="Class 7">Class 7</option>
+                <option value="Class 8">Class 8</option>
+                <option value="Any Questions">Any Questions</option>
+            </select>
+            <select id="subject" name="subject" title="Select your Subject">
+                <option value="" disabled selected>Select your subject</option>
+                <option value="Math">Math</option>
+                <option value="Science">Science</option>
+                <option value="English">English</option>
+                <option value="History">Social Science</option>
+            </select>
+            <select id="board" name="board" title="Select your Board">
+                <option value="" disabled selected>Select your board</option>
+                <option value="CBSE">NCERT</option>
+                <option value="ICSE">ICSE</option>
+            </select>
+        </div>
+        
+        <div class="form-group hidden" id="chapterDiv">
+            <label for="chapter">Please enter the chapter where the mistake is found:</label>
+            <input type="text" id="chapter" name="chapter" placeholder="Enter chapter name or number" title="Enter the chapter where the mistake is found">
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Type in detail here" required title="Type your Message"></textarea>
+        </div>
+        <input type="submit" value="Submit" title="Submit">
+    </form>
+</div>
+
+<div class="button-container">
+    <button id="myButton"><img src="https://cdn.icon-icons.com/icons2/1458/PNG/512/homebutton_99695.png" width="60px" alt="Home Button"></button>
+</div>
+
+<script>
+    document.getElementById('myButton').addEventListener('click', function() {
+        window.location.href = 'https://github.com/QuizLeapsBooks/Home_Quiz_Leap_Books';
+    });
+
+    function toggleVisibility() {
+        const selectedFeedback = document.querySelector('input[name="feedback"]:checked');
+        const classSectionDiv = document.getElementById('classSectionDiv');
+        const chapterDiv = document.getElementById('chapterDiv');
+        
+        if (selectedFeedback && (selectedFeedback.value === 'Spelling Mistake' || selectedFeedback.value === 'Wrong Answer')) {
+            classSectionDiv.classList.remove('hidden');
+            chapterDiv.classList.remove('hidden');
+        } else {
+            classSectionDiv.classList.add('hidden');
+            chapterDiv.classList.add('hidden');
+        }
+    }
+
+    document.querySelectorAll('input[name="feedback"]').forEach(radio => {
+        radio.addEventListener('change', toggleVisibility);
+    });
+
+    toggleVisibility();
+</script>
+
+</body>
+</html>
