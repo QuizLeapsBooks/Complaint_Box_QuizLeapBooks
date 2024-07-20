@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right,  #1206f3, rgb(255, 0, 102) , #cd05f0);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff7c;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: bold 30s ease-in-out 1s;
+}
+
+@keyframes bold {
+    0% {
+font-family: 'Courier New', Courier, monospace;
+    }
+
+    25% {
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    50% {
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    75% {
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    100% {
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;   
+    }
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#Fname,
+#Lname,
+#email,
+#message,
+#classSection,
+#subject,
+#board,
+#chapter {
+    border-radius: 5px;
+    background-color: #ffffff65;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #ffffff8f;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+ background: linear-gradient(to right,  #56f905, rgb(0, 255, 187) , #00ddff);
+ color: black;
+}
+
+.button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background: none;
+}
+
+.hidden {
+    display: none;
+}
